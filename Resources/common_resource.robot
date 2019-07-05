@@ -5,9 +5,9 @@ Documentation                           This resource file contains reusable
 Library                                 SeleniumLibrary
 
 *** Variables ***                       
-${BASE URL}                             http://activity-dev.hikaya.io/
-${VALID USER}                           amos
-${VALID PASSWORD}                       hikayaQA2019
+${BASE URL}                             ****
+${VALID USER}                           ****
+${VALID PASSWORD}                       ****
 
 ${BROWSER}                              Chrome  # Firefox
 ${DELAY}                                0.05
