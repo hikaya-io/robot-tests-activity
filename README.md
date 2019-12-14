@@ -32,7 +32,7 @@ Click [here](https://selenium.dev/selenium/docs/api/py/index.html#drivers) for m
 2. **_Execution step_**: **`robot -T -d Results Tests`**
 3. When it's done, you'll see the report (timestamped) in the `Results` directory; double-click the **`report-`_YYYYMMDD_`-`_HHMMSS_`.html`** (where **_YYYYMMDD_** is the year, month, date and **_HHMMSS_** is the hour, minute, and seconds - e.g, **`report-20191214-124528.html`**).
 
-## Quick Explanation execution options used
+### Quick Explanation execution options used
 * **`-T`** - Short for **`--timestampoutputs`**. Creates reports, logs, etc. with the current timestamp so we don't overwrite existing ones upon execution.
 * **`-d`** - Short for **`--outputdir`**. Tells the framework where to create the report files.
 
