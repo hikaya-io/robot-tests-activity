@@ -1,4 +1,4 @@
-# Installation using virtualenv
+# Set Up
 If you already have [Python](https://www.python.org) with [pip](http://pip-installer.org) installed,
 you can simply run below command to Install virtualenv
 
@@ -27,18 +27,18 @@ $ pip install -r requirements.txt
 In order to run the test you will need a driver to interface with the chosen browser.
 Click [here](https://selenium.dev/selenium/docs/api/py/index.html#drivers) for more drivers details.
 
-## Test Execution
+# Test Execution
 1. **`cd`** into the root directory of the ATCs; **`Activity-ATC`**.
 2. **_Execution step_**: **`robot -T -d Results Tests`**
 3. When it's done, you'll see the report (timestamped) in the `Results` directory; double-click the **`report-`_YYYYMMDD_`-`_HHMMSS_`.html`** (where **_YYYYMMDD_** is the year, month, date and **_HHMMSS_** is the hour, minute, and seconds - e.g, **`report-20191214-124528.html`**).
 
-### Quick Explanation execution options used
+## Quick Explanation execution options used
 * **`-T`** - Short for **`--timestampoutputs`**. Creates reports, logs, etc. with the current timestamp so we don't overwrite existing ones upon execution.
 * **`-d`** - Short for **`--outputdir`**. Tells the framework where to create the report files.
 
 Note to maintainers and developers: read the code documenation sections and also document new/updated code
 
-### Locator Variables Naming Convention
+# Locator Variables Naming Convention
     For readerbilty and smooth collaboration the following naming convention should be follwed when defining locators variables:
 
         `[UI/CONTROLER TYPE ABBR]_[UI ELEMENT FUNCTINALITY]`
