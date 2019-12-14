@@ -1,4 +1,4 @@
-# Set Up
+# Setup
 If you already have [Python](https://www.python.org) with [pip](http://pip-installer.org) installed,
 you can simply run below command to Install virtualenv
 
