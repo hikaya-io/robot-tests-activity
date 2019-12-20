@@ -29,7 +29,7 @@ ${Link Reg Title}          Complete Registration
 
 
 *** Test Case ***
-ACTATC1.1 Register a New User
+ACTATC-1.1 Register a New User
     Display ACT Page                    ${hl_reg_tab}                     ${lbl_reg_title}
     Input ACT Textbox                   ${tb_reg_first_name}              ${First Name}
     Input ACT Textbox                   ${tb_reg_last_name}               ${Last Name}
@@ -41,13 +41,13 @@ ACTATC1.1 Register a New User
     Wait Until Page Contains Element    ${lbl_reg_confirm_email_title}
     Page Should Contain                 ${Confirm Email Text}
 
-ACTATC1.2 Login to Activity before Email Verification
+ACTATC-1.2 Login to Activity before Email Verification
     Display ACT Page                    ${btn_login}                      ${lbl_login_title}
     Enter Login Credentials             ${ACT_SIGN_UP_USERNAME}           ${ACT_SIGN_UP_PASS}
     Wait Until Page Contains Element    ${pnl_alerts_container}
     Page Should Contain                 ${Verification Warning}
 
-ACTATC1.3 Activate Registration and Login
+ACTATC-1.3 Activate Registration and Login
     ${activation_url}                   Get Url                           ${Confirm Email}             ${Link Confirm Title}
     Go To                               ${activation_url}
     Wait Until Page Contains Element    ${pnl_alerts_container}
@@ -57,7 +57,7 @@ ACTATC1.3 Activate Registration and Login
     Enter Login Credentials             ${ACT_SIGN_UP_USERNAME}           ${ACT_SIGN_UP_PASS}
     Wait Until Page Contains Element    ${lbl_create_org}
 
-ACTATC1.4 Create a New Organization
+ACTATC-1.4 Create a New Organization
     Fill Activity Form                  ${New Org Data}
     Element Should Be Disabled          ${tb_org_act_url}
     Textfield Value Should Be           ${tb_org_act_url}                 ${ACTIVITY URL}qa-new org
@@ -70,17 +70,17 @@ ACTATC1.4 Create a New Organization
     ${user_deleted}                     Admin Delete Item                 ${ACT_SIGN_UP_USERNAME}      User
     ${org_deleted}                      Admin Delete Item                 ${data_keys}[0]              Organization
 
-ACTATC1.5 Invite a New User
+ACTATC-1.5 Invite a New User
     Login with Valid Credentials        ${OA_USERNAME}                    ${ACT_PASS}
     Display ACT Page Using DropDown     ${hl_user_popup}                  ${hl_user_org_settings}      ${lbl_org_settings_title}
     Display ACT Page                    ${hl_tab_people}                  ${tbl_users}
     Invite a User                       ${lbl_org_fbh}                    @{Invite Users}
     Display ACT Page Using DropDown     ${hl_user_popup}                  ${hl_sign_out}               ${lbl_login_title}
 
-# [TODO] ACTATC1.6 Resend Invited New User Link
-# [TODO] ACTATC1.7 Revoke and Resend Invite to New User
+# [TODO] ACTATC-1.6 Resend Invited New User Link
+# [TODO] ACTATC-1.7 Revoke and Resend Invite to New User
 
-ACTATC1.8 Complete Registration of Invited User
+ACTATC-1.8 Complete Registration of Invited User
     ${reg_url}                          Get Url                           ${Invitation Email}          ${Link Reg Title}
     Go To                               ${reg_url}
     Input ACT Textbox                   ${tb_reg_first_name}              ${First Name}

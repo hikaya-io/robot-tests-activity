@@ -6,6 +6,7 @@ Documentation      Common Variables File
 # Browsers
 ${CHROME}          chrome
 ${FIREFOX}         firefox
+${BROWSER}         ${CHROME}
 
 # URLs
 ${BASE URL}        https://activity-dev.hikaya.app

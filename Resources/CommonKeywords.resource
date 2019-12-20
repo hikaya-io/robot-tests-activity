@@ -3,7 +3,7 @@ Documentation    Base Page Keywords Resource File
 ...              This keywords resource file contains user keywords which define common
 ...              interations of elements in the Base page as well as common UI interations.
 Resource         CommonVariables.resource
-Variables        CustomLibraries/Credentials.py                                               # This file is contained in the repo.
+Variables        CustomLibraries/Credentials.py                                                # This file is contained in the repo.
 Variables        ../PageObjects/BasePage.py
 Variables        ../PageObjects/DashboardPage.py
 
@@ -95,4 +95,11 @@ Fill Activity Form
     ...                                 Input ACT Textbox                                     ${form_data}[${data_key}]    ${data_key}
     Run Keyword If                      '${web_element.tag_name}'=='textarea'
     ...                                 Input ACT Textbox                                     ${form_data}[${data_key}]    ${data_key}
+    END
+
+ACT Page Contains Multiple Elements
+    [Documentation]                     Validate page contains multiple elements.
+    [Arguments]                         ${elements}
+    FOR                                 ${element}                                            IN                           @{elements}
+    Page Should Contain Element         ${element}
     END

@@ -10,24 +10,29 @@
 # Common UI Locators
 # menu items
 hl_workflows = '//a[contains(text(),"Workflows")]'
-hl_wf_program = 'link:Program'
-hl_wf_project = 'link:Project'
-hl_indicators = '//a[contains(text(),"Indicators")]'
-hl_ind_indicator = 'link:Indicator'
+hl_wf_programs = 'link:Programs'
+hl_wf_projects = 'link:Projects'
+hl_indicators = '//a[contains(text(),"Indicators")][@role="button"]'
+hl_ind_indicators = '//a[./text()="Indicators"]'
 hl_ind_objectives = 'link:Objectives'
 hl_form_library = '//a[contains(text(),"Form Library")]'
 hl_fl_beneficiaries = 'link:Beneficiaries'
-hl_fl_ditribution = 'link:Distribution'
-hl_fl_trainings = 'link:trainings'
+hl_fl_ditributions = 'link:Distributions'
+hl_fl_trainings = 'link:Trainings'
 hl_components = '//a[contains(text(),"Components")]'
 hl_comp_contacts = 'link:Contacts'
 hl_comp_documents = 'link:Documents'
-hl_comp_site = 'link:Site'
-hl_comp_stakeholder = 'link:Stakeholder'
+hl_comp_locations = 'link:Locations'
+hl_comp_stakeholders = 'link:Stakeholders'
 hl_reports = '//a[contains(text(),"Reports")]'
-hl_rpt_dashboard = 'link:Dashboard'
+hl_rpt_dashboards = 'link:Dashboards'
 # buttons
 btn_close = '//button[@class="btn btn-md btn-close"]'
+btn_programs_filter = '//button[contains(text(),"Programs")]'
+btn_projects_filter = '//button[contains(text(),"Projects")]'
+btn_list_view = '//a[contains(.,"List")]'
+# search textbox
+tb_search_data_table = '//div[@class="dataTables_filter"]/label/input'
 
 # User Settings Popup
 hl_user_popup = 'css:ul.navbar-right > li > a'
@@ -75,7 +80,6 @@ hl_footer_lic = '//b[contains(text(),"License")]'
 
 # Floating Chat
 icon_chat = '//div[@class="chat-content"]'
-
 
 # Toast Pop Up
 pnl_toast = 'toast-container'

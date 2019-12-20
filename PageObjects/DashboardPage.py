@@ -17,5 +17,4 @@ lbl_indicator_panel_title = '//h4[contains(text(),"Indicator")]'
 lb_indicator_info = '//a[@href="/indicators/home/0/0/0/"]'
 lbl_indicator_num = lb_indicator_info + '/p[@class="box-info-number"]'
 
-
 lbl_components_panel_title = '//h4[contains(text(),"Components")]'
