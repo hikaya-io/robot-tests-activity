@@ -207,6 +207,7 @@ $RECYCLE.BIN/
 ### Internal Files ###
 # Robot Framework Files
 Results/ 
+debug.
 
 # Credentials file
 Credentials.py

@@ -2,6 +2,8 @@
 Documentation    Base Page Keywords Resource File
 ...              This keywords resource file contains user keywords which define common
 ...              interations of elements in the Base page as well as common UI interations.
+Library          SeleniumLibrary
+Library          Collections
 Resource         CommonVariables.resource
 Variables        CustomLibraries/Credentials.py                                                # This file is contained in the repo.
 Variables        ../PageObjects/BasePage.py

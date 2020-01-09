@@ -33,6 +33,10 @@ btn_projects_filter = '//button[contains(text(),"Projects")]'
 btn_list_view = '//a[contains(.,"List")]'
 # search textbox
 tb_search_data_table = '//div[@class="dataTables_filter"]/label/input'
+# Org Branding
+hl_org_brand = '//a[@class="navbar-brand"]'
+img_org_brand_logo = hl_org_brand + '/img'
+lbl_org_brand_default = hl_org_brand + '/b[text()="Activity"]'
 
 # User Settings Popup
 hl_user_popup = 'css:ul.navbar-right > li > a'

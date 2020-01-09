@@ -1,7 +1,5 @@
 *** Settings ***
 Documentation              [TODO] Document this TestSuite
-Library                    Collections
-Library                    SeleniumLibrary
 Library                    ../../Resources/CustomLibraries/EmailNotifications.py
 Library                    ../../Resources/CustomLibraries/AdminCleaning.py
 Resource                   ../../Resources/CommonKeywords.resource

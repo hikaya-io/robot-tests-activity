@@ -3,17 +3,19 @@
     [TODO] ADD DESC
 """
 
-hl_bc_org_settings = '//ul[@class="breadcrumb"]/li/a[./text()="Organization Settings"]'
-lbl_bc_profile = '//ul[@class="breadcrumb"]/li[./text()="Profile"]'
-lbl_bc_configurations = '//ul[@class="breadcrumb"]/li[./text()="Configurations"]'
-lbl_bc_people = '//ul[@class="breadcrumb"]/li[./text()="People"]'
-hl_bc_people = '//ul[@class="breadcrumb"]/li/a[./text()="People"]'
-lbl_bc_pending_invite = '//ul[@class="breadcrumb"]/li[./text()="Pending Invitations"]'
+breadcrumb = '//ul[@class="breadcrumb"]'
+hl_bc_org_settings = breadcrumb + '/li/a[./text()="Organization Settings"]'
+lbl_bc_profile = breadcrumb + '/li[./text()="Profile"]'
+lbl_bc_configurations = breadcrumb + '/li[./text()="Configurations"]'
+lbl_bc_people = breadcrumb + '/li[./text()="People"]'
+hl_bc_people = breadcrumb + '/li/a[./text()="People"]'
+lbl_bc_pending_invite = breadcrumb + '/li[./text()="Pending Invitations"]'
 lbl_org_settings_title = '//h4[@class="page-title"][contains(text(),"Organization Settings")]'
 hl_tab_profile = '//a[@aria-controls="profile"]'
 hl_tab_configurations = '//a[@aria-controls="configurations"]'
 hl_tab_people = '//a[@aria-controls="people"]'
 hl_tab_usage = '//a[@aria-controls="usage"]'
+btn_save = '//button[text()="Save"]'
 
 # Profile Tab
 pnl_org_logo = 'div[@for="organizationLogo"]'
@@ -21,6 +23,8 @@ tb_org_logo = 'organizationLogo'
 tb_org_name = 'name'
 tb_org_desc = 'id:description'
 btn_org_save = 'updateOrganization'
+btn_reset = 'org-logo-reset'
+img_profile_org_logo = '//img[@alt="Organization Logo"]'
 
 # Configurations Tab
 # Workflow Level Labels
@@ -81,5 +85,11 @@ hl_org_fbh = '//a[contains(text(),"For Better Humans")]'
 
 # Toast Messages
 txt_toast_invite_title = 'Invitation Successful'
-# [TODO: Undo typo once fixed]
-txt_toast_invite_pmsg = 'You have successfuly invited '
+# [TODO: Undo "successfuly" typo once fixed]
+txt_toast_invite_msg = 'You have successfuly invited '
+# [TODO: Undo "Succesfully" typo once fixed]
+txt_toast_update_title = 'Succesfully Updated'
+txt_toast_update_msg = 'Your update has been saved.'
+
+# Text Messages
+txt_org_logo_updated = 'Your organization logo has been updated.'

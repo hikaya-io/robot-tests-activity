@@ -1,7 +1,5 @@
 *** Settings ***
 Documentation                [TODO] Document this TestSuite
-Library                      Collections
-Library                      SeleniumLibrary
 Resource                     ../../Resources/CommonKeywords.resource
 Variables                    ../../PageObjects/WorkflowsPage.py
 Variables                    ../../PageObjects/IndicatorsPage.py
