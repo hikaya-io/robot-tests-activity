@@ -5,7 +5,7 @@ Library                    ../../Resources/CustomLibraries/AdminCleaning.py
 Resource                   ../../Resources/CommonKeywords.resource
 Resource                   ../../Resources/OrganizationSettingsKeywords.resource
 Variables                  ../../PageObjects/CreateOrganizationPage.py
-Suite Setup                Launch Activity Application                              ${BASE URL}                                    ${FIREFOX}
+Suite Setup                Launch Activity Application                              ${BASE URL}                                    ${BROWSER}
 Suite Teardown             Close All Browsers
 
 *** Variable ***
@@ -58,7 +58,7 @@ ACTATC-1.3 Activate Registration and Login
 ACTATC-1.4 Create a New Organization
     Fill Activity Form                  ${New Org Data}
     Element Should Be Disabled          ${tb_org_act_url}
-    Textfield Value Should Be           ${tb_org_act_url}                 ${ACTIVITY URL}qa-new org
+    Textfield Value Should Be           ${tb_org_act_url}                 ${ACTIVITY URL}qa-new-org
     Click ACT Element                   ${btn_org_create}
     Click ACT Element                   ${hl_user_popup}
     Element Should Contain              ${lbl_signed_in_user}             ${ACT_SIGN_UP_USERNAME}
