@@ -23,7 +23,7 @@ $ source venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-## Browser Dirvers
+## Browser Drivers
 In order to run the test you will need a driver to interface with the chosen browser.
 Click [here](https://selenium.dev/selenium/docs/api/py/index.html#drivers) for more drivers details.
 
