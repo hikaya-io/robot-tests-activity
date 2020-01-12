@@ -1,4 +1,5 @@
 # Setup
+
 If you already have [Python](https://www.python.org) with [pip](http://pip-installer.org) installed,
 you can simply run below command to Install virtualenv
 
@@ -6,39 +7,70 @@ you can simply run below command to Install virtualenv
 $ pip install virtualenv
 ```
 
-## Create Virtualenv
+## Create virtualenv
+
 ```bash
 $ virtualenv --no-site-packages venv
 ```
-* use no site packages to prevent virtualenv from seeing your global packages
-* `. venv/bin/activate` allows us to just use pip from command line by adding to the path rather then full path
 
-## Activate Virtualenv
+- use no site packages to prevent virtualenv from seeing your global packages
+- `. venv/bin/activate` allows us to just use pip from command line by adding to the path rather then full path
+
+## Activate virtualenv
+
 ```bash
 $ source venv/bin/activate
 ```
 
-## Install Requirements
+## Install requirements
+
 ```bash
 $ pip install -r requirements.txt
 ```
 
-## Browser Drivers
-In order to run the test you will need a driver to interface with the chosen browser.
-Click [here](https://selenium.dev/selenium/docs/api/py/index.html#drivers) for more drivers details.
+## Browser drivers
 
-# Test Execution
+In order to run the test, you will need a driver to interface with the your browser of choice.
+Here's a list of [drivers](https://selenium.dev/selenium/docs/api/py/index.html#drivers) that Selenium supports. Download your selected driver and save to a location.
+
+## Locate your driver
+
+### For Mac:
+
+You'll need to locate where you saved your driver. One option to do this is you can open up terminal and run:
+
+```bash
+$ sudo nano /etc/paths
+```
+
+Navigate to the bottom of the file and enter the path to your driver:
+
+Example:
+/Users/name/Documents/WebDriver
+
+Quit and save and to check if the path was added correctly, enter:
+
+```bash
+$ echo $PATH
+```
+
+# Test execution
+
 1. **`cd`** into the root directory of the ATCs; **`Activity-ATC`**.
 2. **_Execution step_**: **`robot -T -d Results Tests`**
 3. When it's done, you'll see the report (timestamped) in the `Results` directory; double-click the **`report-`_YYYYMMDD_`-`_HHMMSS_`.html`** (where **_YYYYMMDD_** is the year, month, date and **_HHMMSS_** is the hour, minute, and seconds - e.g, **`report-20191214-124528.html`**).
 
-### Quick Explanation execution options used
-* **`-T`** - Short for **`--timestampoutputs`**. Creates reports, logs, etc. with the current timestamp so we don't overwrite existing ones upon execution.
-* **`-d`** - Short for **`--outputdir`**. Tells the framework where to create the report files.
+## How to execute tests
+
+Here are the execution options we use:
+
+- **`-T`** - Short for **`--timestampoutputs`**. Creates reports, logs, etc. with the current timestamp so we don't overwrite existing ones upon execution.
+- **`-d`** - Short for **`--outputdir`**. Tells the framework where to create the report files.
 
 Note to maintainers and developers: read the code documenation sections and also document new/updated code
 
-# Locator Variables Naming Convention
+# Locator variables naming convention
+
     For readerbilty and smooth collaboration the following naming convention should be follwed when defining locators variables:
 
         `[UI/CONTROLER TYPE ABBR]_[UI ELEMENT FUNCTINALITY]`
@@ -65,4 +97,3 @@ Note to maintainers and developers: read the code documenation sections and also
     |   Text                |   txt     |   txt_login_title       |
     |   Textbox             |   tb      |   tb_login_email        |
     +-----------------------+-----------+-------------------------+
-    
