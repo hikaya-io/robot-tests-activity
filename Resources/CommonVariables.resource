@@ -9,7 +9,9 @@ ${FIREFOX}         firefox
 ${BROWSER}         ${CHROME}
 
 # URLs
-${BASE URL}        https://activity-dev.hikaya.app
+${DEV}             https://activity-dev.hikaya.app
+${STAGING}         https://activity-staging.hikaya.app
+${BASE URL}        ${STAGING}
 ${ACTIVITY URL}    www.activity.hikaya.io/
 
 # TEST DATA

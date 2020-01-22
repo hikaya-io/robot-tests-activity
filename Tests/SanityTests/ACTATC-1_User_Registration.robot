@@ -5,7 +5,8 @@ Library                    ../../Resources/CustomLibraries/AdminCleaning.py
 Resource                   ../../Resources/CommonKeywords.resource
 Resource                   ../../Resources/OrganizationSettingsKeywords.resource
 Variables                  ../../PageObjects/CreateOrganizationPage.py
-Suite Setup                Launch Activity Application                              ${BASE URL}                                    ${FIREFOX}
+Variables                  ../../PageObjects/InvalidInvitationPage.py
+Suite Setup                Launch Activity Application
 Suite Teardown             Close All Browsers
 
 *** Variable ***
@@ -40,12 +41,14 @@ ACTATC-1.1 Register a New User
     Page Should Contain                 ${Confirm Email Text}
 
 ACTATC-1.2 Login to Activity before Email Verification
+    [Setup]                             Precondition Status Check         ACTATC-1.1
     Display ACT Page                    ${btn_login}                      ${lbl_login_title}
     Enter Login Credentials             ${ACT_SIGN_UP_USERNAME}           ${ACT_SIGN_UP_PASS}
     Wait Until Page Contains Element    ${pnl_alerts_container}
     Page Should Contain                 ${Verification Warning}
 
 ACTATC-1.3 Activate Registration and Login
+    [Setup]                             Precondition Status Check         ACTATC-1.2
     ${activation_url}                   Get Url                           ${Confirm Email}             ${Link Confirm Title}
     Go To                               ${activation_url}
     Wait Until Page Contains Element    ${pnl_alerts_container}
@@ -56,9 +59,10 @@ ACTATC-1.3 Activate Registration and Login
     Wait Until Page Contains Element    ${lbl_create_org}
 
 ACTATC-1.4 Create a New Organization
+    [Setup]                             Precondition Status Check         ACTATC-1.3
     Fill Activity Form                  ${New Org Data}
     Element Should Be Disabled          ${tb_org_act_url}
-    Textfield Value Should Be           ${tb_org_act_url}                 ${ACTIVITY URL}qa-new org
+    Textfield Value Should Be           ${tb_org_act_url}                 ${ACTIVITY URL}qa-new-org
     Click ACT Element                   ${btn_org_create}
     Click ACT Element                   ${hl_user_popup}
     Element Should Contain              ${lbl_signed_in_user}             ${ACT_SIGN_UP_USERNAME}
@@ -69,16 +73,15 @@ ACTATC-1.4 Create a New Organization
     ${org_deleted}                      Admin Delete Item                 ${data_keys}[0]              Organization
 
 ACTATC-1.5 Invite a New User
+    [Setup]                             Precondition Status Check         None
     Login with Valid Credentials        ${OA_USERNAME}                    ${ACT_PASS}
     Display ACT Page Using DropDown     ${hl_user_popup}                  ${hl_user_org_settings}      ${lbl_org_settings_title}
     Display ACT Page                    ${hl_tab_people}                  ${tbl_users}
     Invite a User                       ${lbl_org_fbh}                    @{Invite Users}
     Display ACT Page Using DropDown     ${hl_user_popup}                  ${hl_sign_out}               ${lbl_login_title}
 
-# [TODO] ACTATC-1.6 Resend Invited New User Link
-# [TODO] ACTATC-1.7 Revoke and Resend Invite to New User
-
-ACTATC-1.8 Complete Registration of Invited User
+ACTATC-1.6 Complete Registration of Invited User
+    [Setup]                             Precondition Status Check         ACTATC-1.5
     ${reg_url}                          Get Url                           ${Invitation Email}          ${Link Reg Title}
     Go To                               ${reg_url}
     Input ACT Textbox                   ${tb_reg_first_name}              ${First Name}
@@ -99,3 +102,23 @@ ACTATC-1.8 Complete Registration of Invited User
     Page Should Contain                 ${FBH NAME}
     Click ACT Element                   ${hl_sign_out}
     ${user_deleted}                     Admin Delete Item                 ${ACT_SIGN_UP_USERNAME}      User
+
+ACTATC-1.7 Revoke and Resend Invite to New User
+    [Setup]                             Precondition Status Check         None
+    Login with Valid Credentials        ${OA_USERNAME}                    ${ACT_PASS}
+    Display ACT Page Using DropDown     ${hl_user_popup}                  ${hl_user_org_settings}      ${lbl_org_settings_title}
+    Display ACT Page                    ${hl_tab_people}                  ${tbl_users}
+    Invite a User                       ${lbl_org_fbh}                    @{Invite Users}
+    ${reg_url}                          Get Url                           ${Invitation Email}          ${Link Reg Title}
+    Resend Inviation                    @{Invite Users}[0]
+    ${reg_url_resent}                   Get Url                           ${Invitation Email}          ${Link Reg Title}
+    Should Be Equal As Strings          ${reg_url}                        ${reg_url_resent}
+    Display ACT Page                    ${hl_tab_people}                  ${tbl_users}
+    Revoke User Invitation              @{Invite Users}[0]
+    Element Text Should Be              ${lbl_empty_table}                ${txt_empty_table}
+    Display ACT Page Using DropDown     ${hl_user_popup}                  ${hl_sign_out}               ${lbl_login_title}
+    Go To                               ${reg_url_resent}
+    Wait Until Page Contains Element    ${lbl_invalid_page_title}
+    Element Text Should Be              ${lbl_invalid_link_msg}           ${txt_invalid_link_msg}
+    Enter Login Credentials (Popup)     ${OA_USERNAME}                    ${ACT_PASS}
+    Validate Successful Login

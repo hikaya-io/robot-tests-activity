@@ -72,10 +72,10 @@ btn_login = '//a[@href="/accounts/login/"]'
 
 # Collapsible Login Panel
 hl_login_dropdown = '//div[@id="activity-navbar-collapse"]//a'
-pnl_login = 'login-dropdown'
+pnl_login = '//ul[@id="login-dropdown"]'
 tb_pnl_login_username = pnl_login + '//input[@placeholder="Username"]'
 tb_pnl_login_password = pnl_login + '//input[@placeholder="Password"]'
-btn_pnl_login_username = pnl_login + '//button[@class="btn btn-success"]'
+btn_pnl_login_signin = pnl_login + '//button[@class="btn btn-success"]'
 
 # Footer Locators
 hl_footer_hikaya = '//b[contains(text(),"Hikaya")]'
@@ -89,3 +89,7 @@ icon_chat = '//div[@class="chat-content"]'
 pnl_toast = 'toast-container'
 lbl_toast_title = 'css:.toast-title'
 lbl_toast_message = 'css:.toast-message'
+
+# Common Table locators
+lbl_empty_table = '//td[@class="dataTables_empty"]'
+txt_empty_table = 'No data available in table'

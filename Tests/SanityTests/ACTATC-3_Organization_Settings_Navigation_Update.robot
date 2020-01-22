@@ -2,7 +2,7 @@
 Documentation     [TODO] Document this TestSuite
 Resource          ../../Resources/CommonKeywords.resource
 Resource          ../../Resources/OrganizationSettingsKeywords.resource
-Suite Setup       Launch Activity Application                              ${BASE URL}    ${BROWSER}
+Suite Setup       Launch Activity Application
 Suite Teardown    Close All Browsers
 
 *** Variable ***
@@ -11,30 +11,30 @@ Suite Teardown    Close All Browsers
 ACTATC-3.1 Profile Page Update
     Login with Valid Credentials                ${OA_USERNAME}                   ${ACT_PASS}
     Display ACT Page Using DropDown             ${hl_user_popup}                 ${hl_user_org_settings}          ${lbl_org_settings_title}
-    # ${Current Org name}                 Get Value                      ${tb_org_name}
-    # ${Current Org desc}                 Get Value                      ${tb_org_desc}
-    # Choose File                         ${tb_org_logo}                 ${FBH LOGO}
-    # Input ACT Textbox                   ${tb_org_name}                 ${Current Org name} Updated
-    # Input ACT Textbox                   ${tb_org_desc}                 ${Current Org desc} Updated
-    # Click ACT Element                   ${btn_org_save}
-    # Wait Until Page Contains Element    ${pnl_alerts_container}
-    # Element Should Contain              ${pnl_alerts_container}        ${txt_org_logo_updated}
-    # Page Should Contain Element         ${img_org_brand_logo}
-    # Page Should Contain Element         ${img_profile_org_logo}
-    # Page Should Contain Element         ${btn_reset}
-    # Display ACT Page                    ${hl_org_brand}                ${lbl_dashboard_title}
-    # Click ACT Element                   ${hl_user_popup}
-    # Page Should Contain                 ${Current Org name} Updated
-    # Display ACT Page                    ${hl_user_org_settings}        ${lbl_org_settings_title}
-    # Input ACT Textbox                   ${tb_org_name}                 ${Current Org name}
-    # Input ACT Textbox                   ${tb_org_desc}                 ${Current Org desc}
-    # Click ACT Element                   ${btn_reset}
-    # Wait Until Page Contains Element    ${pnl_alerts_container}
-    # Element Should Contain              ${pnl_alerts_container}        ${txt_org_logo_updated}
-    # Page Should Contain Element         ${lbl_org_brand_default}
-    # Page Should Not Contain Element     ${img_org_brand_logo}
-    # Page Should Not Contain Element     ${img_profile_org_logo}
-    # Page Should Not Contain Element     ${btn_reset}
+    ${Current Org name}                         Get Value                        ${tb_org_name}
+    ${Current Org desc}                         Get Value                        ${tb_org_desc}
+    Choose File                                 ${tb_org_logo}                   ${FBH LOGO}
+    Input ACT Textbox                           ${tb_org_name}                   ${Current Org name} Updated
+    Input ACT Textbox                           ${tb_org_desc}                   ${Current Org desc} Updated
+    Click ACT Element                           ${btn_org_save}
+    Wait Until Page Contains Element            ${pnl_alerts_container}
+    Element Should Contain                      ${pnl_alerts_container}          ${txt_org_logo_updated}
+    Page Should Contain Element                 ${img_org_brand_logo}
+    Page Should Contain Element                 ${img_profile_org_logo}
+    Page Should Contain Element                 ${btn_reset}
+    Display ACT Page                            ${hl_org_brand}                  ${lbl_dashboard_title}
+    Click ACT Element                           ${hl_user_popup}
+    Page Should Contain                         ${Current Org name} Updated
+    Display ACT Page                            ${hl_user_org_settings}          ${lbl_org_settings_title}
+    Input ACT Textbox                           ${tb_org_name}                   ${Current Org name}
+    Input ACT Textbox                           ${tb_org_desc}                   ${Current Org desc}
+    Click ACT Element                           ${btn_reset}
+    Wait Until Page Contains Element            ${pnl_alerts_container}
+    Element Should Contain                      ${pnl_alerts_container}          ${txt_org_logo_updated}
+    Page Should Contain Element                 ${lbl_org_brand_default}
+    Page Should Not Contain Element             ${img_org_brand_logo}
+    Page Should Not Contain Element             ${img_profile_org_logo}
+    Page Should Not Contain Element             ${btn_reset}
 
 ACTATC-3.2 Configurations Page Update
     Display ACT Page                            ${hl_tab_configurations}         ${lbl_bc_configurations}

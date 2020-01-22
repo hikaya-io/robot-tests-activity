@@ -82,14 +82,26 @@ lbl_pending_invite_title = '//h4[@class="page-title"][contains(text(),"Pending I
 btn_organizations = '//button[contains(text(),"Organizations")]'
 hl_org_all = btn_organizations + '/..//a[./text()="--All--"]'
 hl_org_fbh = '//a[contains(text(),"For Better Humans")]'
+tbl_pending_invites = '//table[@id="invitationTable"]'
+btn_more = '//button[contains(text(),"More")]'
+btn_toggle_dropdown = '//button[@data-toggle="dropdown"]'
+hl_resend = '//a[contains(text(),"Resend")]'
+hl_revoke = '//a[@href="#deleteItemModal"]'
+mdl_confirm_revoke = '//div[contains(@id,"revokeInviteModal")]'
+lbl_confirm_revoke_title = '//h4[@class="modal-title"][contains(text(),"Confirm Revoke")]'
+lbl_confirm_revoke_msg = mdl_confirm_revoke + '//p'
+btn_revoke = '//button[contains(@id,"revokeInvite")]'
 
 # Toast Messages
 txt_toast_invite_title = 'Invitation Successful'
 # [TODO: Undo "successfuly" typo once fixed]
-txt_toast_invite_msg = 'You have successfuly invited '
+txt_toast_invite_msg = 'You have successfully invited '
 # [TODO: Undo "Succesfully" typo once fixed]
 txt_toast_update_title = 'Succesfully Updated'
 txt_toast_update_msg = 'Your update has been saved.'
+txt_toast_revoke_invite_msg = 'You have successfully revoked the invitation'
+txt_toast_resend_invite_msg = 'Invitation was successfully sent'
 
 # Text Messages
 txt_org_logo_updated = 'Your organization logo has been updated.'
+txt_confirm_revoke_msg = 'Are you sure you want to revoke invation to '

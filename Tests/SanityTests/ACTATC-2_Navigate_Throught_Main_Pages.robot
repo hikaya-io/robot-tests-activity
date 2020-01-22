@@ -6,7 +6,7 @@ Variables                    ../../PageObjects/IndicatorsPage.py
 Variables                    ../../PageObjects/FormLibraryPage.py
 Variables                    ../../PageObjects/ComponentsPage.py
 Variables                    ../../PageObjects/ReportsPage.py
-Suite Setup                  Launch Activity Application                ${BASE URL}                   ${BROWSER}
+Suite Setup                  Launch Activity Application
 Suite Teardown               Close All Browsers
 
 *** Variable ***

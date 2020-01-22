@@ -9,9 +9,10 @@ from selenium.webdriver.common.keys import Keys
 import Credentials as cred
 
 # Data
-admin_url = 'https://activity-dev.hikaya.app/admin'
-username = cred.ADMIN_USERNAME
-password = cred.ADMIN_PASSWORD
+admin_url = 'https://activity-staging.hikaya.app/admin'
+# admin_url = 'https://activity-dev.hikaya.app/admin'
+username = cred.OA_USERNAME
+password = cred.ACT_PASS
 
 
 def get_browser():

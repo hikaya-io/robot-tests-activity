@@ -17,7 +17,7 @@ tbl_documents = '//table[@id="documentationtable"]'
 # Locations Page Locators
 lbl_locations_title = '//h4[@class="page-title"][contains(text(),"Locations List")]'
 btn_map_view = '//a[contains(text(),"Map")]'
-btn_add_locations = '//a[@href="/workflow/siteprofile_add"]'
+btn_add_locations = '//button[@data-target="#addLocationModal"]'
 tbl_locations = '//table[@id="siteProfileTable"]'
 
 # Stakeholders Page Locators
