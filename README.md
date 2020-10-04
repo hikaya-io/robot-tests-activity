@@ -14,7 +14,7 @@ $ virtualenv --no-site-packages venv
 ```
 
 - use no site packages to prevent virtualenv from seeing your global packages
-- `. venv/bin/activate` allows us to just use pip from command line by adding to the path rather then full path
+- `. venv/bin/activate` allows us to just use pip from command line by adding to the path rather than full path
 
 ## Activate virtualenv
 
@@ -30,7 +30,7 @@ $ pip install -r requirements.txt
 
 ## Browser drivers
 
-In order to run the test, you will need a driver to interface with the your browser of choice.
+In order to run the test, you will need a driver to interface with your browser of choice.
 Here's a list of [drivers](https://selenium.dev/selenium/docs/api/py/index.html#drivers) that Selenium supports. Download your selected driver and save to a location.
 
 ## Locate your driver
@@ -58,7 +58,7 @@ $ echo $PATH
 
 1. **`cd`** into the root directory of the ATCs; **`Activity-ATC`**.
 2. **_Execution step_**: **`robot -T -d Results Tests`**
-3. When it's done, you'll see the report (timestamped) in the `Results` directory; double-click the **`report-`_YYYYMMDD_`-`_HHMMSS_`.html`** (where **_YYYYMMDD_** is the year, month, date and **_HHMMSS_** is the hour, minute, and seconds - e.g, **`report-20191214-124528.html`**).
+3. When it's done, you'll see the report (timestamped) in the `Results` directory; double-click the **`report-`_YYYYMMDD_`-`_HHMMSS_`.html`** (where **_YYYYMMDD_** is the year, month, date and **_HHMMSS_** is the hour, minute, and seconds - e.g., **`report-20191214-124528.html`**).
 
 ## How to execute tests
 
